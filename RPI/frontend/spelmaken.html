@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Capture The Box</title>
+        <meta name="description" content="Capture The Box is a game made by Karel Bousson (Project 1)">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="msapplication-TileColor" content="#e85e00">
+        <meta name="theme-color" content="#e85e00">
+        <!-- Icons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#e85e00">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+        <!-- Personal stylesheets -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/screen.css">
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+        <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+        <!-- SocketIO -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+        <!-- ChartJS -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <!-- Personal scripts -->
+        <script src="script/dataHandler.js"></script>
+        <script src="script/app.js"></script>
+    </head>
+    <body>
+      <div class="o-row o-row--center o-row--dark o-row--border">
+        <div class="o-container">
+          <div class="c-header">
+            <h1 class="c-header__title">
+              Capture The Box
+            </h1>
+          </div>
+          <div class="c-header__nav">
+            <nav class="c-nav">
+              <ul class="o-list c-nav__list">
+                <li class="c-nav__item">
+                  <a class="c-nav__link" href="index.html">
+                    <svg class="o-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                      <path d="M0 0h24v24H0z" fill="none"/>
+                      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="c-nav__item"><a class="c-nav__link" href="scorebord.html">Score</a></li>
+                <li class="c-nav__item"><a class="c-nav__link" href="uitleg.html">Uitleg</a></li>
+                <li class="c-nav__item is_selected"><a class="c-nav__link" href="beheer.html">Beheer</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="o-row">
+        <div class="o-container u-max-width-sm">
+            <h2 class="c-lead c-lead--center">Maak een spel aan</h2>
+            <div class="c-feedback js-feedback">Hier komt feedback over het formulier.</div>
+            <form class="c-form">
+                <div class="c-form__section">
+                    <label class="c-form__label" for="startdate">Begintijd:</label><br>
+                    <input class="c-form__input" type="date" name="startdate" id="startdate" />
+                    <input class="c-form__input" type="time" name="starttime" id="starttime" /><br>
+                </div>
+                <div class="c-form__section">
+                    <label class="c-form__label" for="enddate">Eindtijd:</label><br>
+                    <input class="c-form__input" type="date" name="enddate" id="enddate" />
+                    <input class="c-form__input" type="time" name="endtime" id="endtime" /><br>
+                </div>
+                <div class="c-form__section">
+                    <label class="c-form__label" for="players">Spelers:</label><br>
+                    <span class="c-form__info">Geef hier de spelers op, gescheiden door een komma</span><br>
+                    <textarea class="c-form__textarea" name="spelers" id="players"></textarea>
+                </div>
+            </form>
+            <div class="u-center">
+              <a class="c-link-cta c-form__submit js-creategame">Maak spel aan</a>
+            </div>
+        </div>
+      </div>
+    </body>
+</html>

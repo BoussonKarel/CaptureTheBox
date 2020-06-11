@@ -1,0 +1,1094 @@
+/*------------------------------------*\
+  #FONTS
+\*------------------------------------*/
+
+
+
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "Roboto", Helvetica, arial, sans-serif;
+    color: #262222;
+    background-color: #FAF7F7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+
+::selection {
+    background: #186ff2;
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+  #Elements
+\*------------------------------------*/
+
+/*
+    Elements: Images
+    ---
+    Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1 {
+    font-size: 36px;
+    line-height: 40px;
+    margin: 0 0 24px;
+}
+
+h2 {
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 24px;
+}
+
+ul,
+ol {
+    padding-left: 24px;
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 24px;
+    font-family: "Times New Roman", serif;
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-size: 12px;
+    line-height: 16px;
+    padding-top: 8px;
+    color: Grey;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 24px;
+}
+
+a {
+    color: #186FF2;
+    transition: all .1s ease-in-out;
+}
+
+a:visited,
+a:active {
+    color: #186FF2;
+}
+
+a:hover,
+a:focus {
+    color: #4D94FF;
+}
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: svg
+    ---
+    To style svg objects
+*/
+
+.o-svg {
+    height: 100%;
+}
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+    padding: 24px 24px 0;
+    display: flow-root;
+}
+
+.o-row--dark {
+    background: #262222;
+    color: #949699;
+}
+
+.o-row--dark * {
+    color: #FFFFFF;
+}
+
+.o-row--border {
+    border-bottom: 4px solid #990808;
+}
+
+.o-row--center {
+    text-align: center;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+    padding-top: 48px;
+    padding-bottom: 24px;
+}
+
+.o-row--xl {
+    padding-top: 72px;
+    padding-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+    .o-row {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .o-row--md {
+        padding-top: 48px;
+        padding-bottom: 24px;
+    }
+
+    .o-row--lg {
+        padding-top: 72px;
+        padding-bottom: 48px;
+    }
+}
+
+@media (min-width: 992px) {
+    .o-row--xl {
+        padding-top: 96px;
+        padding-bottom: 72px;
+    }
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 85em;
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+    display: flow-root;
+}
+
+.o-section + .o-section {
+    margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+    .o-section--lg + .o-section--lg,
+    .o-section--xl + .o-section--xl {
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section--xl + .o-section--xl {
+        margin-top: 72px;
+    }
+}
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .o-layout__item {
+        flex-basis: 100%;
+    }
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+    margin: 0 -12px;
+}
+
+.o-layout--gutter > .o-layout__item {
+    padding: 0 12px;
+}
+
+.o-layout--gutter-sm {
+    margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+    padding: 0 6px;
+}
+
+.o-layout--gutter-lg {
+    margin: 0 -24px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+    padding: 0 24px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+    justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+    justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+    justify-content: center;
+}
+
+.o-layout--justify-space-around {
+    justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+    justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+    justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+    align-items: flex-start;
+}
+
+.o-layout--align-end {
+    align-items: flex-end;
+}
+
+.o-layout--align-center {
+    align-items: center;
+}
+
+.o-layout--align-baseline {
+    align-items: baseline;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+    align-content: start;
+}
+
+.o-layout--align-content-end {
+    align-content: end;
+}
+
+.o-layout--align-content-center {
+    align-content: center;
+}
+
+.o-layout--align-content-space-around {
+    align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+    align-content: space-between;
+}
+
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+    list-style: none;
+    padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Header
+    ---
+    Main header of the website
+*/
+
+.c-header__title {
+    font-size: 20px;
+}
+
+.c-header__nav {
+    display: flex;
+}
+
+.c-nav {
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.c-nav__list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.c-nav__item {
+    flex-grow: 1;
+}
+
+.c-nav__link {
+    text-decoration: none;
+    display: block;
+}
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+    fill: white; /* SVG */
+    color: white;
+}
+
+.is-selected .c-nav__link,
+.c-nav__link:hover,
+.c-nav__link:focus {
+    color: white;
+    font-weight: bold;
+}
+
+/*
+    Component: Overview
+    ---
+    The main game overview on the home screen
+*/
+
+.c-overview {
+    position: relative;
+}
+
+.c-overview__map {
+    z-index: -1;
+    height: calc(100vh - 131px);
+}
+
+.c-overview__timer {
+    margin-top: 16px;
+    position: absolute;
+    top: 0;
+    width: 14.5em;
+    left: calc(50% - 7.25em);
+    text-align: center;
+    background-color: rgba(153,8,8,0.8);
+    color: white;
+    font-family: "Roboto Mono", Helvetica, arial, sans-serif;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.c-navigate__holder {
+    position: relative;
+}
+
+.c-navigate {
+    position: absolute;
+    right: 0;
+    height: 56px;
+    width: 56px;
+    bottom: 120px;
+    border-radius: 50%;
+    background-color: #4D4949;
+    fill: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*
+    Component: Info
+    ---
+    A component that displays game info (coords, owner)
+*/
+
+.c-info {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: rgba(38,34,34,0.8);
+    color: white;
+
+    padding-bottom: 24px;
+}
+
+.c-info__location, .c-info__owner {
+    display: flex;
+    width: 100%;
+}
+
+.c-info__icon {
+    fill: white;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.c-info__text {
+    flex-basis: 100%;
+}
+
+/*
+    Component: Table
+    ---
+    A component for styling tables
+*/
+
+.c-table {
+    border: 0px;
+    width: 100%;
+    /* border-spacing: 0 8px; */
+}
+
+.c-table th {
+    color: white;
+    background: #262222;
+    text-align: left;
+    font-weight: 400;
+}
+
+.c-table td,
+.c-table th {
+    padding: 5px 16px;
+}
+
+.c-table tr {
+    background: #CCC6C6;
+}
+
+.c-table tr:nth-child(even) {
+    background: #E6E4E4;
+}
+
+/*
+    Component: graph
+    ---
+    Graph to show scoreboard
+*/
+
+.c-graph {
+    max-width: 100%;
+    max-width: 100%;
+}
+
+/*
+    Component: CTA
+    ---
+    Component for a call to action
+*/
+
+.c-link-cta {
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #990808;
+    padding: 8px 25px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.c-link-cta,
+.c-link-cta:visited,
+.c-link-cta:active {
+    color: white;
+}
+
+.c-link-cta--alt {
+    background: #666161;
+}
+
+.c-link-cta:hover {
+    color: white;
+    background: #B31B1B;
+}
+
+.c-link-cta--alt:hover {
+    background: #999191;
+}
+
+/*
+    Component: Feedback
+    ---
+    Feedback when sending in a form
+*/
+
+.c-navigate {
+
+}
+
+/*
+    Component: Lead
+    ---
+    Component to style specific headings
+*/
+
+.c-lead {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.c-lead::after {
+    content: "";
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 1px;
+    width: 104px;
+    background-color: #990808;
+}
+
+/*
+    Component: Form
+    ---
+    Component for the "Create game" form
+*/
+
+.c-form {
+    width: 100%;
+}
+
+.c-form__section {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.c-form__textarea {
+    width: 100%;
+    min-height: 5em;
+}
+
+.c-form__info {
+    font-size: 11px;
+}
+
+/*
+    Component: Feedback
+    ---
+    Feedback when sending in a form
+*/
+
+.c-feedback {
+    display: none;
+    text-align: center;
+    padding: 8px 0px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.c-feedback--success,
+.c-feedback--error {
+    display: block;
+}
+
+.c-feedback--success {
+    background: #3AD158;
+    color: black;
+
+}
+
+.c-feedback--error {
+    background: #E65C5C;
+    color: white;
+}
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+.u-center {
+    text-align: center;
+}
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0 !important;
+}
+
+.u-plr-clear {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.u-mb-clear {
+    margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+    margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+    margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+    margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+    margin-bottom: 32px !important;
+}
+
+.u-mb-xl {
+    margin-bottom: 48px !important;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-sm {
+    max-width: 36em !important;
+}
+
+.u-max-width-md {
+    max-width: 44em !important;
+}
+
+.u-max-width-lg {
+    max-width: 60em !important;
+}
+
+.u-max-width-xl {
+    max-width: 75em !important;
+}
+
+.u-max-width-none {
+    max-width: none !important;
+}
+
+/*
+    Utility: Flex
+    ---
+    Utility classes to put specific flex properties onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-flex-basis-auto {
+    flex-basis: auto !important;
+}
+
+.u-stretch {
+    flex-basis: 100%;
+}
+
+.u-flex-grow-1 {
+    flex-grow: 1 !important;
+}
+
+.u-1-of-2 {
+    flex-basis: calc(100% / 2) !important;
+}
+
+.u-1-of-3 {
+    flex-basis: calc(100% / 3) !important;
+}
+
+.u-2-of-3 {
+    flex-basis: calc(100% / 3 * 2) !important;
+}
+
+.u-1-of-4 {
+    flex-basis: calc(100% / 4) !important;
+}
+
+.u-3-of-4 {
+    flex-basis: calc(100% / 4 * 3) !important;
+}
+
+.u-1-of-5 {
+    flex-basis: calc(100% / 5) !important;
+}
+
+.u-2-of-5 {
+    flex-basis: calc(100% / 5 * 2) !important;
+}
+
+.u-3-of-5 {
+    flex-basis: calc(100% / 5 * 3) !important;
+}
+
+.u-4-of-5 {
+    flex-basis: calc(100% / 5 * 4) !important;
+}
+
+.u-1-of-6 {
+    flex-basis: calc(100% / 6) !important;
+}
+
+.u-5-of-6 {
+    flex-basis: calc(100% / 6 * 5) !important;
+}
+
+@media (min-width: 576px) {
+    .u-1-of-2-bp1 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp1 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp1 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp1 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp1 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp1 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp1 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp1 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .u-1-of-2-bp2 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp2 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp2 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp2 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp2 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp2 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp2 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp2 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .u-1-of-2-bp3 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp3 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp3 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp3 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp3 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp3 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp3 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp3 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .u-1-of-2-bp4 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp4 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp4 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp4 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp4 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp4 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp4 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp4 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+
+    .u-5-of-12-bp4 {
+        flex-basis: calc(100% / 12 * 5) !important;
+    }
+
+    /* The XD file has 12 columns, one of the items take 5, the other 7 */
+    .u-7-of-12-bp4 {
+        flex-basis: calc(100% / 12 * 7) !important;
+    }
+}
+
+/*------------------------------------*\
+  #MEDIA
+\*------------------------------------*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
