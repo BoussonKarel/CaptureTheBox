@@ -112,14 +112,6 @@ void setData() {
   int waarde_LDR = get_LDR();
 
   int data_LDR = waarde_LDR;
-  
-  data_LDR = 128;
-  latitude = 50.825281;
-  longitude = 3.249998;
-  RFID_lastUID[0] = 0x66;
-  RFID_lastUID[1] = 0xc0;
-  RFID_lastUID[2] = 0x54;
-  RFID_lastUID[3] = 0x73;
 
   long data_lat = abs(latitude * 1000000.0);
   if (latitude < 0) {
