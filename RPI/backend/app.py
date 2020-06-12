@@ -3,7 +3,6 @@ from RPi import GPIO
 import time, threading, json, datetime, os, base64
 from subprocess import check_output # IP on display
 from ttn import MQTTClient # LoRa
-import paho.mqtt.client as mqtt # LoRa
 
 from repositories.DataRepository import DataRepository
 from flask import Flask, jsonify, request
