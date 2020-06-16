@@ -177,14 +177,17 @@ def show_ip():
     E = 22
     RS = 27
     display = LCD(E, RS, DB)
-
+    
     while True:
         display.clear()
-        ips = str(check_output(['hostname', '--all-ip-addresses']))
-        # Haal b' en \\n eruit en splits in een array op een spatie
-        ips = ips.strip("b'").strip(" \\n").split(" ")
-        # Wifi IP = index 1 bij mij
-        ip = ips[1]
+        try:
+            ips = str(check_output(['hostname', '--all-ip-addresses']))
+            # Haal b' en \\n eruit en splits in een array op een spatie
+            ips = ips.strip("b'").strip(" \\n").split(" ")
+            # Wifi IP = index 1 bij mij
+            ip = ips[1]
+        except Exception as e:
+            ip = "Not found..."
 
         display.send_message(f"IP:")
         display.second_row()

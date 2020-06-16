@@ -124,7 +124,7 @@ void setData() {
 
 
   // Data verdelen in schijven van 8 bits
-  mydata[0] = (data_LDR >> 8) & 0xFF;
+  mydata[0] = data_LDR & 0xFF;
   
   mydata[1] = (data_lat >> 24) & 0xFF;
   mydata[2] = (data_lat >> 16) & 0xFF;

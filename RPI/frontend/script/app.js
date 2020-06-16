@@ -89,8 +89,28 @@ const showScoreboard = function(jsonObject) {
 }
 
 const showAddress = function(jsonObject) {
+  console.log(jsonObject);
   const addr = jsonObject.address;
-  html_address.innerHTML = `~ ${addr.road} ${addr.house_number}, ${addr.city}`;
+
+  if (addr.place) {
+    html_address.innerHTML = `~ ${addr.place}`;
+  }
+  else {
+    let straat = "";
+    let nummer = "";
+    let gemeente = "";
+    if (addr.road)
+      straat = addr.road;
+    if (addr.house_number)
+      nummer = addr.house_number;
+    if (addr.city_district)
+      gemeente = ", " + addr.city_district;
+    else if (addr.city)
+      gemeente = ", " + addr.city;
+    else if (addr.town)
+      gemeente = ", " + addr.town;
+    html_address.innerHTML = `~ ${straat} ${nummer}${gemeente}`;
+  }
 }
 
 const showMarker = function(coords) {
