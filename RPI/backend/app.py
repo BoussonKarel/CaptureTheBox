@@ -148,7 +148,7 @@ def update_value(type, value):
     global vorige_RFID
     timestamp = datetime.datetime.now()
 
-    if (type == "LDR"):
+    if type == "LDR":
         if (value != vorig_lichtp):
             vorig_lichtp = value
             # LDR waarde toevoegen in database
@@ -156,7 +156,7 @@ def update_value(type, value):
             # socketio.emit('B2F_MVP1_LDR', {"Waarde": value}, broadcast=True)
         else:
             print("LDR waarde niet veranderd. Niet updaten.")
-    elif (type == "GPS"):
+    elif type == "GPS":
         if (value != vorige_GPS):
             vorige_GPS = value
             # GPS waarden toevoegen in database
@@ -165,10 +165,10 @@ def update_value(type, value):
             socketio.emit('B2F_GPS_locatie', {"Waarde": value}, broadcast=True)
         else:
             print("GPS waarde niet veranderd. Niet updaten.")
-    elif (type == "RFID"):
+    elif type == "RFID":
         SpelBeheer.RFID_actie(value, timestamp)
         # socketio.emit("B2F_MVP1_RFID", {"UID": value})
-    elif (sensor == "Error"):
+    elif type == "Error":
         print(f"Arduino kon niet antwoorden op verzoek: {value}")
 
 # ------- LCD DISPLAY -------
